@@ -23,11 +23,24 @@
         <h1>ANIMAL MEMORY</h1>
         <P>Remember the animal locations and match it to your card<br> Go as fast as you can to match them all!</P>
     </div>
-    <!-- Game clock from ChatGPT -->
+    <!-- Game area -->
     <div class="game-area">
+        <!-- Game clock from ChatGPT -->
         <div class="game-clock">
             <p id="clock">00:00</p>
             <button id="startButton">Start Game</button>
+        </div>
+        <!-- area for the hidden cards that player needs to memorise -->
+        <div class="hidden-cards-area">
+            <div class="hidden-cards" id="hidden1"></div>
+            <div class="hidden-cards" id="hidden2"></div>
+            <div class="hidden-cards" id="hidden3"></div>
+            <div class="hidden-cards" id="hidden4"></div>
+        </div>
+        <!-- area for 'active' card that player needs to match -->
+        <div>
+            <div class="active-card-area"></div>
+            <button id="new-card">New Card</button>
         </div>
 
     </div>
