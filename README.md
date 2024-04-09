@@ -1,39 +1,85 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+#Animal Memory Game
 
-Welcome,
+A javascript memory game where you remember the animal card locations and match it to your active card.
+The live game can be found here <link>
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Features
+### Existing features
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+### Features for the future
 
-## Codeanywhere Reminders
+## Site Design Process
+### Goal
+### Site wireframe
+### Development process
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## Technologies
+- HTML – for basic site structure
+- CSS – for visual appeal and responsive design features
+- JavaScript - for all game functions
+- GenAI – creation of game clock
+    - ChatGPT 3.5 – visual concept creation and prompt development
+- Figma – visual concept development, colour palette selection
+- Balsamic – site map and wireframe creation 
+- Adobe Photoshop
 
-`python3 -m http.server`
+## Testing
+### General Strategy
+### Devices and Browsers
+#### Web Browsers
+Chrome (primary), Firefox , Edge and Brave
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+#### Devices
+- Phones: Pixel4a, iPhoneXR, GalaxyS10
+- Tablets: iPad 9.5”, Surface Pro 12” (older model)
+- Laptops: Dell Inspirion 13”, MacBook Air 13”, MacBook Pro 17" (older model)
+- Desktop screens: BenQ PD series 27”
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+### Final Validation
+HTML – all pages passed validation with no errors detected using the official [W3C HTML validator](https://validator.w3.org/). The summary of results can be found [here](assets/readme/html-validation.png)
 
-`http_server`
+CSS – all pages passed validation with no errors detected using the official [W3C CSS validator](https://jigsaw.w3.org/css-validator/). The summary of results can be found [here](assets/readme/css-valdation.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Accessibility – all pages showed high accessibility using Chrome [Lighthouse DevTools](https://developer.chrome.com/docs/lighthouse/). The summary of results can be found [here](assets/readme/Lighthouse-validation.png)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Bugs
+### Fixed
+### Unfixed
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Deployment
+The site was deployed to GitHub pages using the recommended process.
 
-To log into the Heroku toolbelt CLI:
+In Summary:
+1.	Within the GitHub repository for this project, the settings tab at the top of the page was accessed.
+2.	From settings, the Pages tab was selected from the menu on the left side of the screen (within the Code and Automation section of the menu).
+3.	From Pages, the Source was set to ‘Deploy from a Branch’, and the Branch was set to ‘main’.
+4.	Once main branch is selected, hit the save button (ignore the folder/(root) menu).
+5.	Once saved, the link to the active site will appear at the top of the page.
+6.	Alternatively, from the main repository page, within the menu on the right a ‘Deployments’ will now have appeared. This section provides a link to the active site as well as summarizes the number of updates the site has received since initial deployment.
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+The github repository for this project can be found [here](https://github.com/Annytomica/portfolio/)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![GitHub deployments](https://img.shields.io/github/deployments/Annytomica/portfolio/github-pages)
+![GitHub language count](https://img.shields.io/github/languages/count/Annytomica/portfolio)
+![GitHub top language](https://img.shields.io/github/languages/top/Annytomica/portfolio?color=yellow)
+![GitHub watchers](https://img.shields.io/github/watchers/Annytomica/portfolio)
+![GitHub forks](https://img.shields.io/github/forks/Annytomica/portfolio?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/Annytomica/portfolio?style=social)
 
----
+## Credits
+I would like to acknowledge and thank the following people and resources used in the creation of this site.
+### Content
+-	the Durstenfeld shuffle algorithm
+    - originally published in xxx
+    - is an optimised version of the Fisher-Yates shuffle (ref xxx)
+    - the optimised JavaScript code was taken from ashleedawg's answer on stackoverflow <link>
 
-Happy coding!
+- the game clock code was generated by ChatGPTv3.5 (both HTML and JavaScript). CSS styling was my own.
+
+### Media
+-	The icons in the logo and all game cards are from [Font Awesome](https://fontawesome.com/)
+-	The Github summary bar used in README.md is from [shields.io](https://shields.io/badges/)
+
+### Acknowledgements
+
+My mentor, Medale Oluwafemi, for his invaluable guidance and feedback.
