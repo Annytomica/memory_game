@@ -21,7 +21,11 @@ function hiddenGenerator() {
   return hidden; 
 }
 
-// Fisher-Yates shuffle algorithm
+/**  Durstenfeld shuffle algorithm
+ * for randomising order of an array without bias to location within array
+ * optimised version of Fisher-Yates shuffle
+ * JavaScript code for algorithim taken from ashleedawg's answer on stackoverflow
+*/
 function shuffle(x) {
   for (let i = x.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
