@@ -1,6 +1,7 @@
 # Animal Memory Game
 
-A javascript memory game where you remember the animal card locations and match it to your active card.
+A JavaScript memory game where you remember the location of animal cards and match them to your active card.
+
 The live game can be found [here](https://annytomica.github.io/memory_game/)
 
 ## Features
@@ -10,7 +11,15 @@ The live game can be found [here](https://annytomica.github.io/memory_game/)
 
 ## Site Design Process
 ### Goal
+The goal was to create a simple and fun memory game website
+- interface easy to understand and use
+- use animal icons so each card easy to identify and match
+- game functionality created using JavaScript
+- a game where you can compete against yourself or others by timing completion speed
+
 ### Site wireframe
+The game wireframe and visual design was created in Figma.
+
 ### Development process
 
 ## Technologies
@@ -18,10 +27,9 @@ The live game can be found [here](https://annytomica.github.io/memory_game/)
 - CSS – for visual appeal and responsive design features
 - JavaScript - for all game functions
 - GenAI – creation of game clock
-    - ChatGPT 3.5 – visual concept creation and prompt development
-- Figma – visual concept development, colour palette selection
-- Balsamic – site map and wireframe creation 
-- Adobe Photoshop
+    - ChatGPT 3.5 – HTML and JavaScript code for game clock
+- Figma – wireframe and visual concept development
+
 
 ## Testing
 ### General Strategy
