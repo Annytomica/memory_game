@@ -34,15 +34,62 @@ function shuffle(x) {
   }
 }
 
-let cardsArray = cardGenerator();
+let animals = cardGenerator();
 let hiddenArray = hiddenGenerator();
 
 //allows checking of random arrays to ensure algorithim working and no duplicates
-console.log("Cards:", cardsArray);
+console.log("Cards:", animals);
 console.log("Hidden:", hiddenArray);
 
+/**
+ * This function allocates the correct icon html to the 'active' card 
+ * to make animal visible, using a switch case statement.
+ */
+function animalCodeAllocator(){
+  let animalCode;
+  let animal = animals[Math.floor(Math.random() * 10)];
+  
+  switch (animal) {
+    case 'hippo':
+      animalCode = '<i class="fa-light fa-hippo"></i>';
+      break;
+    case 'otter':
+      animalCode = '<i class="fa-light fa-otter"></i>';
+      break;
+    case 'dog':
+      animalCode = '<i class="fa-light fa-dog"></i>';
+      break;
+    case 'cow':
+      animalCode = '<i class="fa-light fa-cow"></i>';
+      break;
+    case 'fish':
+      animalCode = '<i class="fa-light fa-fish-fins"></i>';
+      break;
+    case 'kiwi':
+      animalCode = '<i class="fa-light fa-kiwi-bird"></i>';
+      break;
+    case 'worm':
+      animalCode = '<i class="fa-light fa-worm"></i>';
+      break;
+    case 'shrimp':
+      animalCode = '<i class="fa-light fa-shrimp"></i>';
+      break;
+    case 'frog':
+      animalCode = '<i class="fa-light fa-frog"></i>';
+      break;
+    case 'cat':
+      animalCode = '<i class="fa-light fa-cat"></i>';
+      break;
+  }
+  console.log(animal);
+  console.log(animalCode);
+  return animalCode
+}
 
+let cardCode = animalCodeAllocator();
+console.log(cardCode);
 
+// can remove console logs from final code. they are there to check code is working at each step
 
 
 /**
