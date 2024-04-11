@@ -28,19 +28,23 @@
         <!-- Game clock from ChatGPT -->
         <div class="game-clock">
             <p id="clock">00:00</p>
-            <button id="startButton">Start Game</button>
+            <button class="button" id="startButton">Start Game</button>
         </div>
         <!-- area for the hidden cards that player needs to memorise -->
-        <div class="hidden-cards-area">
-            <div class="hidden-cards" id="hidden1"></div>
-            <div class="hidden-cards" id="hidden2"></div>
-            <div class="hidden-cards" id="hidden3"></div>
-            <div class="hidden-cards" id="hidden4"></div>
+        <div class="cards-area hidden-cards-area">
+            <div class="cards hidden-cards" id="hidden1"></div>
+            <div class="cards hidden-cards" id="hidden2"></div>
+            <div class="cards hidden-cards" id="hidden3"></div>
+            <div class="cards hidden-cards" id="hidden4"></div>
+        </div>
+        <!-- area for result statements -->
+        <div class="result-area">
+            <h1 class="result"></h1>
         </div>
         <!-- area for 'active' card that player needs to match -->
-        <div>
-            <div class="active-card-area"></div>
-            <button id="new-card">New Card</button>
+        <div class="cards-area active-card-area">
+            <div class="cards" id="active-card"></div>
+            <button class="button" id="new-card-button">New Card</button>
         </div>
 
     </div>

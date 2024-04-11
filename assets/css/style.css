@@ -19,11 +19,45 @@ body {
     /* to keep body elements stacked vertically relative to each other */
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
+
+/* Main content styles */
 .logo {
     font-size: 10vh;
-
 }
 
+#clock {
+    font-size: 36px;
+}
 
+.button {
+    height: 50px;
+    width: 100px;
+    background-color: #ABF8C6;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 2px 5px #45554a;
+    border-radius: 5px;
+}
+.cards-area {
+    width: 900px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.cards {
+    width: 200px;
+    height: 200px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px #45554a;
+    border-radius: 5px;
+}
+
+.result-area {
+    height: 100px;
+    text-align: center;
+    color: #1E25FE;
+}
 
