@@ -27,6 +27,13 @@ body {
     font-size: 10vh;
 }
 
+.game-area{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #clock {
     font-size: 36px;
 }
@@ -34,6 +41,7 @@ body {
 .button {
     height: 50px;
     width: 100px;
+    margin: 10px;
     background-color: #ABF8C6;
     font-size: 16px;
     border: none;
@@ -41,16 +49,17 @@ body {
     border-radius: 5px;
 }
 .cards-area {
-    width: 900px;
+    max-width: 900px;
+    min-width: 280px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .cards {
     width: 200px;
     height: 200px;
-    margin: 10px 0;
+    margin: 10px;
     box-shadow: 0 2px 5px #45554a;
     border-radius: 5px;
 }
@@ -59,5 +68,13 @@ body {
     height: 100px;
     text-align: center;
     color: #1E25FE;
+}
+
+.active-card-area {
+    width: 40vh;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
