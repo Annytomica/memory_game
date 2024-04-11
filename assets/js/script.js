@@ -1,11 +1,12 @@
-/**
- * This function generates random arrays for the hidden cards and active card stack.
- * It takes advantage of the Fisher-Yates shuffle algorithim to randomise the original array.
- */
 //Initial array of cards - never changes
-let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const array = ['hippo', 'otter', 'dog', 'cow', 'fish', 'kiwi', 'worm', 'shrimp', 'frog', 'cat'];
 
-//creates the randomised 'stack' of cards the active card is drawn from
+/**
+ * These functions generate random arrays for the hidden cards and active card stack.
+ * They take advantage of the Durstenfeld/Fisher-Yates shuffle algorithim to randomise the original array.
+ */
+
+//creates the randomised 'stack' of animal cards the active card is drawn from
 function cardGenerator() {
 // Create a copy of the original array, using let x = y without slice would mean function modifies both arrays.
   let cards = array.slice(); 
