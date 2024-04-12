@@ -20,6 +20,19 @@ function defaultCardCode(){
   }
 }
 
+/**
+ * 
+ */
+// to be used for active card icon code allocation
+let activeCard = document.getElementById("active-card");
+
+activeCard.addEventListener("click", function() {
+    defaultCardCode();
+    let animal = animals[Math.floor(Math.random() * 10)];
+    let activeCardCode = animalCodeAllocator(animal);
+    this.innerHTML = activeCardCode;
+})
+
 
 
 /**
@@ -96,28 +109,28 @@ function animalCodeAllocator(){
       animalCode = '<i class="fa-solid fa-otter fa-xl"></i>';
       break;
     case 'dog':
-      animalCode = '<i class="fa-light fa-dog"></i>';
+      animalCode = '<i class="fa-solid fa-dog fa-xl"></i>';
       break;
     case 'cow':
-      animalCode = '<i class="fa-light fa-cow"></i>';
+      animalCode = '<i class="fa-solid fa-cow fa-xl"></i>';
       break;
     case 'fish':
-      animalCode = '<i class="fa-light fa-fish-fins"></i>';
+      animalCode = '<i class="fa-solid fa-fish-fins fa-xl"></i>';
       break;
     case 'kiwi':
-      animalCode = '<i class="fa-light fa-kiwi-bird"></i>';
+      animalCode = '<i class="fa-solid fa-kiwi-bird fa-xl"></i>';
       break;
     case 'worm':
-      animalCode = '<i class="fa-light fa-worm"></i>';
+      animalCode = '<i class="fa-solid fa-worm fa-xl"></i>';
       break;
     case 'shrimp':
-      animalCode = '<i class="fa-light fa-shrimp"></i>';
+      animalCode = '<i class="fa-solid fa-shrimp fa-xl"></i>';
       break;
     case 'frog':
-      animalCode = '<i class="fa-light fa-frog"></i>';
+      animalCode = '<i class="fa-solid fa-frog fa-xl"></i>';
       break;
     case 'cat':
-      animalCode = '<i class="fa-light fa-cat"></i>';
+      animalCode = '<i class="fa-solid fa-cat fa-xl"></i>';
       break;
   }
   console.log(animal);
