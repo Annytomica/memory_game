@@ -16,7 +16,7 @@ console.log("Hidden:", hiddenArray);
 function defaultCardCode(){
   let cards = document.getElementsByClassName('cards');
   for (let i = 0; i < cards.length; i++) {
-    cards[i].innerHTML = '<i class="fa-solid fa-question"></i>';
+    cards[i].innerHTML = '<i class="fa-solid fa-question fa-2xl"></i>';
   }
 }
 
@@ -90,10 +90,10 @@ function animalCodeAllocator(){
   
   switch (animal) {
     case 'hippo':
-      animalCode = '<i class="fa-light fa-hippo"></i>';
+      animalCode = '<i class="fa-solid fa-hippo fa-xl"></i>';
       break;
     case 'otter':
-      animalCode = '<i class="fa-light fa-otter"></i>';
+      animalCode = '<i class="fa-solid fa-otter fa-xl"></i>';
       break;
     case 'dog':
       animalCode = '<i class="fa-light fa-dog"></i>';
