@@ -1,6 +1,15 @@
 //Initial array of cards - never changes
 const array = ['hippo', 'otter', 'dog', 'cow', 'fish', 'kiwi', 'worm', 'shrimp', 'frog', 'cat'];
 
+//calling intial functions
+defaultCardCode();
+let animals = cardGenerator();
+let hiddenArray = hiddenGenerator();
+
+//allows checking of random arrays to ensure algorithim working and no duplicates
+console.log("Cards:", animals);
+console.log("Hidden:", hiddenArray);
+
 /**
  * Adds default question mark to all cards at start of new game
  */
@@ -11,22 +20,22 @@ function defaultCardCode(){
   }
 }
 
-defaultCardCode();
+
 
 /**
- * These functions generate random arrays for the hidden cards and active card stack.
- * They take advantage of the Durstenfeld/Fisher-Yates shuffle algorithim to randomise the original array.
+ * Creates the randomised 'stack' of animal cards the active card is drawn from
+ * Uses Durstenfeld/Fisher-Yates shuffle algorithim to randomise the original array.
  */
-
-//creates the randomised 'stack' of animal cards the active card is drawn from
 function cardGenerator() {
 // Create a copy of the original array, using let x = y without slice would mean function modifies both arrays.
   let cards = array.slice(); 
   shuffle(cards);
   return cards; 
 }
-
-// creates the randomised and reduced array of 4 hidden cards 
+/**
+ * Creates the randomised and reduced array of 4 hidden cards
+ * Uses Durstenfeld/Fisher-Yates shuffle algorithim to randomise the original array.
+ */
 function hiddenGenerator() {
   let hidden = array.slice();
   shuffle(hidden);
@@ -46,12 +55,30 @@ function shuffle(x) {
   }
 }
 
-let animals = cardGenerator();
-let hiddenArray = hiddenGenerator();
+/**
+ * Allocates animal from hiddenArray to each hidden card,
+ * using switch case statement
+ */
 
-//allows checking of random arrays to ensure algorithim working and no duplicates
-console.log("Cards:", animals);
-console.log("Hidden:", hiddenArray);
+function hiddenAnimalAllocator() {
+  let hiddenAnimal;
+
+  switch (this.Id) {
+    case 'hidden1':
+      hiddenAnimal = hiddenArray[0];
+      break;
+    case 'hidden2':
+      hiddenAnimal = hiddenArray[1];
+      break;
+    case 'hidden3':
+      hiddenAnimal = hiddenArray[2];
+      break;
+    case 'hidden4':
+      hiddenAnimal = hiddenArray[3];
+      break;
+  }
+  return hiddenAnimal
+}
 
 /**
  * This function allocates the correct icon html to the 'active' card 
