@@ -2,6 +2,18 @@
 const array = ['hippo', 'otter', 'dog', 'cow', 'fish', 'kiwi', 'worm', 'shrimp', 'frog', 'cat'];
 
 /**
+ * Adds default question mark to all cards at start of new game
+ */
+function defaultCardCode(){
+  let cards = document.getElementsByClassName('cards');
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].innerHTML = '<i class="fa-solid fa-question"></i>';
+  }
+}
+
+defaultCardCode();
+
+/**
  * These functions generate random arrays for the hidden cards and active card stack.
  * They take advantage of the Durstenfeld/Fisher-Yates shuffle algorithim to randomise the original array.
  */
@@ -18,7 +30,7 @@ function cardGenerator() {
 function hiddenGenerator() {
   let hidden = array.slice();
   shuffle(hidden);
-  hidden.splice(0, 7);
+  hidden.splice(0, 6);
   return hidden; 
 }
 
