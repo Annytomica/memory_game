@@ -6,9 +6,16 @@ defaultCardCode();
 let animals = cardGenerator();
 let hiddenArray = hiddenGenerator();
 
+
 //allows checking of random arrays to ensure algorithim working and no duplicates
 console.log("Cards:", animals);
 console.log("Hidden:", hiddenArray);
+
+
+//Even listeners for hidden cards
+document.getElementById("hidden1").addEventListener("click", function() {
+  hiddenCardMatcher(hidden1);
+})
 
 /**
  * Adds default question mark to all cards at start of new game
@@ -21,9 +28,8 @@ function defaultCardCode(){
 }
 
 /**
- * 
+ * Allocates active card icon code for each new card draw
  */
-// to be used for active card icon code allocation
 let activeCard = document.getElementById("active-card");
 
 activeCard.addEventListener("click", function() {
@@ -32,8 +38,6 @@ activeCard.addEventListener("click", function() {
     let activeCardCode = animalCodeAllocator(animal);
     this.innerHTML = activeCardCode;
 })
-
-
 
 /**
  * Creates the randomised 'stack' of animal cards the active card is drawn from
@@ -97,9 +101,8 @@ function hiddenAnimalAllocator() {
  * This function allocates the correct icon html to the 'active' card 
  * to make animal visible, using a switch case statement.
  */
-function animalCodeAllocator(){
+function animalCodeAllocator(animal){
   let animalCode;
-  let animal = animals[Math.floor(Math.random() * 10)];
   
   switch (animal) {
     case 'hippo':
