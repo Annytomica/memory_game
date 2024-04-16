@@ -12,11 +12,6 @@ console.log("Cards:", animals);
 console.log("Hidden:", hiddenArray);
 
 
-//Even listeners for hidden cards
-document.getElementById("hidden1").addEventListener("click", function() {
-  hiddenCardMatcher(hidden1);
-})
-
 /**
  * Adds default question mark to all cards at start of new game
  */
@@ -28,16 +23,48 @@ function defaultCardCode(){
 }
 
 /**
+ * Clears the message from card matching attempt
+ */
+function clearMessage(){
+  document.getElementById("result").innerText = "";
+}
+
+/**
  * Allocates active card icon code for each new card draw
  */
 let activeCard = document.getElementById("active-card");
 
 activeCard.addEventListener("click", function() {
     defaultCardCode();
+    clearMessage();
     let animal = animals[Math.floor(Math.random() * 10)];
     let activeCardCode = animalCodeAllocator(animal);
     this.innerHTML = activeCardCode;
 })
+
+/**
+ * Allocates hidden card icon code and looks for match to active card
+ */
+// event listener for selecting a hidden card to match the active card
+
+let hiddenCard1 = document.getElementById('hidden1');
+
+hiddenCard1.addEventListener("click", function() {
+  let hiddenCardId = hiddenCard1.id;
+  let animal = hiddenAnimalAllocator(hiddenCardId);
+  console.log(animal);
+  let hiddenCardCode = animalCodeAllocator(animal);
+  this.innerHTML = hiddenCardCode;
+  console.log(hiddenCardCode)
+  console.log(activeCard.innerHTML)
+  if (hiddenCardCode === activeCard.innerHTML) {      
+    this.className = "cards matched-cards";
+    document.getElementById("result").innerText = "MATCH!";
+  } else {
+    document.getElementById("result").innerText = "No Match. Try Again!";
+  }
+})
+
 
 /**
  * Creates the randomised 'stack' of animal cards the active card is drawn from
@@ -77,10 +104,10 @@ function shuffle(x) {
  * using switch case statement
  */
 
-function hiddenAnimalAllocator() {
+function hiddenAnimalAllocator(hiddenCardId) {
   let hiddenAnimal;
 
-  switch (this.Id) {
+  switch (hiddenCardId) {
     case 'hidden1':
       hiddenAnimal = hiddenArray[0];
       break;
@@ -136,15 +163,10 @@ function animalCodeAllocator(animal){
       animalCode = '<i class="fa-solid fa-cat fa-xl"></i>';
       break;
   }
-  console.log(animal);
-  console.log(animalCode);
   return animalCode
 }
 
 let cardCode = animalCodeAllocator();
-console.log(cardCode);
-
-// can remove console logs from final code. they are there to check code is working at each step
 
 
 /**
