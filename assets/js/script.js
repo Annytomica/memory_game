@@ -43,8 +43,8 @@ activeCard.addEventListener("click", function() {
 })
 
 /**
- * Event listeners to allocate correct icon code and
- * check for match to active card
+ * Hidden Card 1 event listener to allocate correct icon code
+ * and check for match to active card
  */
 let hiddenCard1 = document.getElementById('hidden1');
 
@@ -60,36 +60,69 @@ hiddenCard1.addEventListener("click", function() {
   } else {
     document.getElementById("result").innerText = "No Match. Try Again!";
   }
-  console.log(this.innerHTML);
-  console.log(activeCard.innerHTML);
-  console.log(hiddenCard1.innerHTML);
 })
 
 /**
- * creates variables to fucntion use for hidden card 1
+ * Hidden Card 2 event listener to allocate correct icon code
+ * and check for match to active card
  */
+let hiddenCard2 = document.getElementById('hidden2');
 
-function card1() {
-  
-  return hiddenCard;
-  return hiddenCardId;
-}
-/**
- * Allocates hidden card icon code after event listener'click'
- */
-function codeAllocation() {
+hiddenCard2.addEventListener("click", function() {
+  let hiddenCard = hiddenCard2;
+  let hiddenCardId = hiddenCard2.id;
   let animal = hiddenAnimalAllocator(hiddenCardId);
   let hiddenCardCode = animalCodeAllocator(animal);
-  return hiddenCardCode;
-};
+  this.innerHTML = hiddenCardCode;
+    if (this.innerHTML === activeCard.innerHTML) {      
+    hiddenCard.className = "matched-cards";
+    document.getElementById("result").innerText = "MATCH!";
+  } else {
+    document.getElementById("result").innerText = "No Match. Try Again!";
+  }
+})
 
 /**
- * Checks for match between 'clicked' hidden card and active card
+ * Hidden Card 3 event listener to allocate correct icon code
+ * and check for match to active card
  */
+let hiddenCard3 = document.getElementById('hidden3');
 
-function animalMatch() {
-  
-}
+hiddenCard3.addEventListener("click", function() {
+  let hiddenCard = hiddenCard3;
+  let hiddenCardId = hiddenCard3.id;
+  let animal = hiddenAnimalAllocator(hiddenCardId);
+  let hiddenCardCode = animalCodeAllocator(animal);
+  this.innerHTML = hiddenCardCode;
+    if (this.innerHTML === activeCard.innerHTML) {      
+    hiddenCard.className = "matched-cards";
+    document.getElementById("result").innerText = "MATCH!";
+  } else {
+    document.getElementById("result").innerText = "No Match. Try Again!";
+  }
+})
+
+/**
+ * Hidden Card 4 event listener to allocate correct icon code
+ * and check for match to active card
+ */
+let hiddenCard4 = document.getElementById('hidden4');
+
+hiddenCard4.addEventListener("click", function() {
+  let hiddenCard = hiddenCard4;
+  let hiddenCardId = hiddenCard4.id;
+  let animal = hiddenAnimalAllocator(hiddenCardId);
+  let hiddenCardCode = animalCodeAllocator(animal);
+  this.innerHTML = hiddenCardCode;
+    if (this.innerHTML === activeCard.innerHTML) {      
+    hiddenCard.className = "matched-cards";
+    document.getElementById("result").innerText = "MATCH!";
+  } else {
+    document.getElementById("result").innerText = "No Match. Try Again!";
+  }
+})
+
+
 
 /**
  * Creates the randomised 'stack' of animal cards the active card is drawn from
