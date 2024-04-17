@@ -52,8 +52,10 @@ Accessibility – all pages showed high accessibility using Chrome [Lighthouse D
 
 ## Bugs
 ### Fixed
-### Unfixed
 - a hidden aria label "aria-hidden="true" appears in active card icon code and prevents a correct match to hidden card. Do not know where this aria label comes from or how to prevent.
+FIX: added the aria-hidden="true" to the icon code in the animalCodeAllocator function.
+### Unfixed
+
 
 ## Deployment
 The site was deployed to GitHub pages using the recommended process.
