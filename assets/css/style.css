@@ -66,6 +66,16 @@ body {
     border-radius: 5px;
 }
 
+.matched-cards {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    padding: 55px 0;
+    font-size: 70px;
+    border: 5px solid cyan;
+    box-shadow: 0 2px 5px #45554a;
+    border-radius: 5px;
+}
 .result-area {
     height: 100px;
     text-align: center;

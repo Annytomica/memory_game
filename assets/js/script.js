@@ -43,28 +43,53 @@ activeCard.addEventListener("click", function() {
 })
 
 /**
- * Allocates hidden card icon code and looks for match to active card
+ * Event listeners to allocate correct icon code and
+ * check for match to active card
  */
-// event listener for selecting a hidden card to match the active card
-
 let hiddenCard1 = document.getElementById('hidden1');
 
 hiddenCard1.addEventListener("click", function() {
+  let hiddenCard = hiddenCard1;
   let hiddenCardId = hiddenCard1.id;
   let animal = hiddenAnimalAllocator(hiddenCardId);
-  console.log(animal);
   let hiddenCardCode = animalCodeAllocator(animal);
   this.innerHTML = hiddenCardCode;
-  console.log(hiddenCardCode)
-  console.log(activeCard.innerHTML)
-  if (hiddenCardCode === activeCard.innerHTML) {      
-    this.className = "cards matched-cards";
+    if (this.innerHTML === activeCard.innerHTML) {      
+    hiddenCard.className = "matched-cards";
     document.getElementById("result").innerText = "MATCH!";
   } else {
     document.getElementById("result").innerText = "No Match. Try Again!";
   }
+  console.log(this.innerHTML);
+  console.log(activeCard.innerHTML);
+  console.log(hiddenCard1.innerHTML);
 })
 
+/**
+ * creates variables to fucntion use for hidden card 1
+ */
+
+function card1() {
+  
+  return hiddenCard;
+  return hiddenCardId;
+}
+/**
+ * Allocates hidden card icon code after event listener'click'
+ */
+function codeAllocation() {
+  let animal = hiddenAnimalAllocator(hiddenCardId);
+  let hiddenCardCode = animalCodeAllocator(animal);
+  return hiddenCardCode;
+};
+
+/**
+ * Checks for match between 'clicked' hidden card and active card
+ */
+
+function animalMatch() {
+  
+}
 
 /**
  * Creates the randomised 'stack' of animal cards the active card is drawn from
@@ -133,34 +158,34 @@ function animalCodeAllocator(animal){
   
   switch (animal) {
     case 'hippo':
-      animalCode = '<i class="fa-solid fa-hippo fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-hippo fa-xl" aria-hidden="true"></i>';
       break;
     case 'otter':
-      animalCode = '<i class="fa-solid fa-otter fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-otter fa-xl" aria-hidden="true"></i>';
       break;
     case 'dog':
-      animalCode = '<i class="fa-solid fa-dog fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-dog fa-xl" aria-hidden="true"></i>';
       break;
     case 'cow':
-      animalCode = '<i class="fa-solid fa-cow fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-cow fa-xl" aria-hidden="true"></i>';
       break;
     case 'fish':
-      animalCode = '<i class="fa-solid fa-fish-fins fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-fish-fins fa-xl" aria-hidden="true"></i>';
       break;
     case 'kiwi':
-      animalCode = '<i class="fa-solid fa-kiwi-bird fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-kiwi-bird fa-xl" aria-hidden="true"></i>';
       break;
     case 'worm':
-      animalCode = '<i class="fa-solid fa-worm fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-worm fa-xl" aria-hidden="true"></i>';
       break;
     case 'shrimp':
-      animalCode = '<i class="fa-solid fa-shrimp fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-shrimp fa-xl" aria-hidden="true"></i>';
       break;
     case 'frog':
-      animalCode = '<i class="fa-solid fa-frog fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-frog fa-xl" aria-hidden="true"></i>';
       break;
     case 'cat':
-      animalCode = '<i class="fa-solid fa-cat fa-xl"></i>';
+      animalCode = '<i class="fa-solid fa-cat fa-xl" aria-hidden="true"></i>';
       break;
   }
   return animalCode
