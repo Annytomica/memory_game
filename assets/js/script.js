@@ -117,11 +117,26 @@ hiddenCard4.addEventListener("click", function() {
     if (this.innerHTML === activeCard.innerHTML) {      
     hiddenCard.className = "matched-cards";
     document.getElementById("result").innerText = "MATCH!";
+    allMatch();
   } else {
     document.getElementById("result").innerText = "No Match. Try Again!";
   }
 })
 
+/**
+*function for checking if all hidden cards have been matched and game is over
+*/
+
+function allMatch() {
+  
+  if (hiddenCard1.className === "matched-cards"
+        && hiddenCard2.className === "matched-cards"
+        && hiddenCard3.className === "matched-cards"
+        && hiddenCard4.className === "matched-cards") {
+          document.getElementById("result").innerHTML = `Congratulations! All match!
+          Your time was ${clockElement.textContent}`;
+        }
+}
 
 
 /**
@@ -264,6 +279,11 @@ startButton.addEventListener('click', function() {
   startTime = new Date().getTime();
   gameTimer = setInterval(updateClock, 1000);
 });
+
+//stops the game timer but does not clear it
+function stopGameTimer() {
+  clearInterval(gameTimer);
+}
 
 /**
  * This is the end of the game clock code from CHatGPT
