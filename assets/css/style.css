@@ -66,6 +66,7 @@ body {
     border-radius: 5px;
 }
 
+/* same styling as .cards but with thick highlighting border to indicate matched card*/
 .matched-cards {
     width: 200px;
     height: 200px;
