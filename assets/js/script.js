@@ -57,6 +57,7 @@ hiddenCard1.addEventListener("click", function() {
     if (this.innerHTML === activeCard.innerHTML) {      
     hiddenCard.className = "matched-cards";
     document.getElementById("result").innerText = "MATCH!";
+    allMatch();
   } else {
     document.getElementById("result").innerText = "No Match. Try Again!";
   }
@@ -77,6 +78,7 @@ hiddenCard2.addEventListener("click", function() {
     if (this.innerHTML === activeCard.innerHTML) {      
     hiddenCard.className = "matched-cards";
     document.getElementById("result").innerText = "MATCH!";
+    allMatch();
   } else {
     document.getElementById("result").innerText = "No Match. Try Again!";
   }
@@ -97,6 +99,7 @@ hiddenCard3.addEventListener("click", function() {
     if (this.innerHTML === activeCard.innerHTML) {      
     hiddenCard.className = "matched-cards";
     document.getElementById("result").innerText = "MATCH!";
+    allMatch();
   } else {
     document.getElementById("result").innerText = "No Match. Try Again!";
   }
