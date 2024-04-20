@@ -6,11 +6,9 @@ defaultCardCode();
 let animalCards = cardGenerator();
 let hiddenArray = hiddenGenerator();
 
-
 //allows checking of random arrays to ensure algorithim working and no duplicates
-console.log("Cards:", animals);
+console.log("Cards:", animalCards);
 console.log("Hidden:", hiddenArray);
-
 
 /**
  * Adds default question mark to all cards at start of new game
@@ -30,101 +28,60 @@ function clearMessage(){
 }
 
 /**
- * Allocates active card icon code for each new card draw
- */
-let activeCard = document.getElementById("active-card");
+* Defining HTML Elements for global access by functions
+*/
+const activeCard = document.getElementById("active-card");
+const hiddenCard1 = document.getElementById('hidden1');
+const hiddenCard2 = document.getElementById('hidden2');
+const hiddenCard3 = document.getElementById('hidden3');
+const hiddenCard4 = document.getElementById('hidden4');
+const hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
 
+/**
+ * Event listener that allocates active card icon code for each new card draw
+ */
 activeCard.addEventListener("click", function() {
-    defaultCardCode();
-    clearMessage();
-    let animal = animalCards[Math.floor(Math.random() * 10)];
-    let activeCardCode = animalCodeAllocator(animal);
-    this.innerHTML = activeCardCode;
-})
+  defaultCardCode();
+  clearMessage();
+  let animal = animalCards[Math.floor(Math.random() * animalCards.length)];
+  let activeCardCode = animalCodeAllocator(animal);
+  this.innerHTML = activeCardCode;
+});
 
 /**
- * Hidden Card 1 event listener to allocate correct icon code
- * and check for match to active card
+ * Event listener for hidden cards
+ * using .forEach enables one iteration through array of hidden cards
+ * using => allows use of this. in functions to refer to the current hidden card 
+ * to enable generic function for all hidden cards and avoid code repeats
+ * My Mentor Oluwafemi Medale provided guidance on how to get this function to work
  */
-let hiddenCard1 = document.getElementById('hidden1');
+hiddenCards.forEach((hiddenCard) => {
+  hiddenCard.addEventListener("click", function() {
+    cardMatchCheck(hiddenCard);
+  });
+});
 
-hiddenCard1.addEventListener("click", function() {
-  let hiddenCard = hiddenCard1;
-  let hiddenCardId = hiddenCard1.id;
+/**
+* function that allocates icon code to clicked hidden card
+* and checks for match to active card
+* and checks if four hidden cards have been matched and game is over
+*/
+function cardMatchCheck(hiddenCard) {
+  let hiddenCardId = hiddenCard.id;
+  // allocates icon code to clicked hidden card
   let animal = hiddenAnimalAllocator(hiddenCardId);
   let hiddenCardCode = animalCodeAllocator(animal);
+  //checks if hidden card matches active card
   this.innerHTML = hiddenCardCode;
     if (this.innerHTML === activeCard.innerHTML) {      
     hiddenCard.className = "matched-cards";
     document.getElementById("result").innerText = "MATCH!";
+    // checks if all four hidden cards have been matched and game is over
     allMatch();
   } else {
     document.getElementById("result").innerText = "No Match. Try Again!";
   }
-})
-
-/**
- * Hidden Card 2 event listener to allocate correct icon code
- * and check for match to active card
- */
-let hiddenCard2 = document.getElementById('hidden2');
-
-hiddenCard2.addEventListener("click", function() {
-  let hiddenCard = hiddenCard2;
-  let hiddenCardId = hiddenCard2.id;
-  let animal = hiddenAnimalAllocator(hiddenCardId);
-  let hiddenCardCode = animalCodeAllocator(animal);
-  this.innerHTML = hiddenCardCode;
-    if (this.innerHTML === activeCard.innerHTML) {      
-    hiddenCard.className = "matched-cards";
-    document.getElementById("result").innerText = "MATCH!";
-    allMatch();
-  } else {
-    document.getElementById("result").innerText = "No Match. Try Again!";
-  }
-})
-
-/**
- * Hidden Card 3 event listener to allocate correct icon code
- * and check for match to active card
- */
-let hiddenCard3 = document.getElementById('hidden3');
-
-hiddenCard3.addEventListener("click", function() {
-  let hiddenCard = hiddenCard3;
-  let hiddenCardId = hiddenCard3.id;
-  let animal = hiddenAnimalAllocator(hiddenCardId);
-  let hiddenCardCode = animalCodeAllocator(animal);
-  this.innerHTML = hiddenCardCode;
-    if (this.innerHTML === activeCard.innerHTML) {      
-    hiddenCard.className = "matched-cards";
-    document.getElementById("result").innerText = "MATCH!";
-    allMatch();
-  } else {
-    document.getElementById("result").innerText = "No Match. Try Again!";
-  }
-})
-
-/**
- * Hidden Card 4 event listener to allocate correct icon code
- * and check for match to active card
- */
-let hiddenCard4 = document.getElementById('hidden4');
-
-hiddenCard4.addEventListener("click", function() {
-  let hiddenCard = hiddenCard4;
-  let hiddenCardId = hiddenCard4.id;
-  let animal = hiddenAnimalAllocator(hiddenCardId);
-  let hiddenCardCode = animalCodeAllocator(animal);
-  this.innerHTML = hiddenCardCode;
-    if (this.innerHTML === activeCard.innerHTML) {      
-    hiddenCard.className = "matched-cards";
-    document.getElementById("result").innerText = "MATCH!";
-    allMatch();
-  } else {
-    document.getElementById("result").innerText = "No Match. Try Again!";
-  }
-})
+}
 
 /**
 *function for checking if all hidden cards have been matched and game is over

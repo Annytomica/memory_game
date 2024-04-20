@@ -55,6 +55,7 @@ Accessibility – all pages showed high accessibility using Chrome [Lighthouse D
 - a hidden aria label "aria-hidden="true" appears in active card icon code and prevents a correct match to hidden card. Do not know where this aria label comes from or how to prevent. FIX: added the aria-hidden="true" to the icon code in the animalCodeAllocator function.
 - function allMatch only works sometimes. Unclear what prevents it from running correctly every time. FIX: coder error - had only put the allMAtch function in event listener for hidden4, not all the hidden cards.
 ### Unfixed
+- icon for hidden animal not displaying when card clicked but is correctly identified for the match function
 
 
 ## Deployment
@@ -93,4 +94,4 @@ I would like to acknowledge and thank the following people and resources used in
 
 ### Acknowledgements
 
-My mentor, Medale Oluwafemi, for his invaluable guidance and feedback.
+My mentor, Oluwafemi Medale, for his invaluable guidance and feedback.
