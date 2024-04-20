@@ -1,9 +1,9 @@
 //Initial array of cards - never changes
-const array = ['hippo', 'otter', 'dog', 'cow', 'fish', 'kiwi', 'worm', 'shrimp', 'frog', 'cat'];
+const originalArray = ['hippo', 'otter', 'dog', 'cow', 'fish', 'kiwi', 'worm', 'shrimp', 'frog', 'cat'];
 
 //calling intial functions
 defaultCardCode();
-let animals = cardGenerator();
+let animalCards = cardGenerator();
 let hiddenArray = hiddenGenerator();
 
 
@@ -37,7 +37,7 @@ let activeCard = document.getElementById("active-card");
 activeCard.addEventListener("click", function() {
     defaultCardCode();
     clearMessage();
-    let animal = animals[Math.floor(Math.random() * 10)];
+    let animal = animalCards[Math.floor(Math.random() * 10)];
     let activeCardCode = animalCodeAllocator(animal);
     this.innerHTML = activeCardCode;
 })
@@ -148,7 +148,7 @@ function allMatch() {
  */
 function cardGenerator() {
 // Create a copy of the original array, using let x = y without slice would mean function modifies both arrays.
-  let cards = array.slice(); 
+  let cards = originalArray.slice(); 
   shuffle(cards);
   return cards; 
 }
@@ -157,7 +157,7 @@ function cardGenerator() {
  * Uses Durstenfeld/Fisher-Yates shuffle algorithim to randomise the original array.
  */
 function hiddenGenerator() {
-  let hidden = array.slice();
+  let hidden = originalArray.slice();
   shuffle(hidden);
   hidden.splice(0, 6);
   return hidden; 
