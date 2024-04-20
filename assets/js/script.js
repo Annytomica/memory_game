@@ -72,8 +72,8 @@ function cardMatchCheck(hiddenCard) {
   let animal = hiddenAnimalAllocator(hiddenCardId);
   let hiddenCardCode = animalCodeAllocator(animal);
   //checks if hidden card matches active card
-  this.innerHTML = hiddenCardCode;
-    if (this.innerHTML === activeCard.innerHTML) {      
+  hiddenCard.innerHTML = hiddenCardCode;
+    if (hiddenCard.innerHTML === activeCard.innerHTML) {      
     hiddenCard.className = "matched-cards";
     document.getElementById("result").innerText = "MATCH!";
     // checks if all four hidden cards have been matched and game is over
