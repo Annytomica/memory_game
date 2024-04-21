@@ -21,13 +21,6 @@ function defaultCardCode(){
 }
 
 /**
- * Clears the message from card matching attempt
- */
-function clearMessage(){
-  document.getElementById("result").innerText = "";
-}
-
-/**
 * Defining HTML Elements for global access by functions
 */
 const activeCard = document.getElementById("active-card");
@@ -98,6 +91,12 @@ function allMatch() {
         }
 }
 
+/**
+ * Clears the message from card matching attempt
+ */
+function clearMessage(){
+  document.getElementById("result").innerText = "";
+}
 
 /**
  * Creates the randomised 'stack' of animal cards the active card is drawn from
