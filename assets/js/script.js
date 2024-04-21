@@ -28,7 +28,7 @@ const hiddenCard1 = document.getElementById('hidden1');
 const hiddenCard2 = document.getElementById('hidden2');
 const hiddenCard3 = document.getElementById('hidden3');
 const hiddenCard4 = document.getElementById('hidden4');
-const hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
+let hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
 
 /**
  * Event listener that allocates active card icon code for each new card draw
