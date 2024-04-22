@@ -155,6 +155,8 @@ function newGame() {
       case 'hidden4':
         hiddenAnimal = hiddenArray[3];
         break;
+      default:
+        alert("Oops! Something didn't load right. Please restart the game");
     }
     return hiddenAnimal
   }
@@ -197,6 +199,8 @@ function newGame() {
       case 'cat':
         animalCode = '<i class="fa-solid fa-cat fa-xl" aria-hidden="true"></i>';
         break;
+      default:
+        alert('Unknown animal. Call a scientist!... or just try a new card');
     }
     return animalCode
   }
