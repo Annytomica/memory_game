@@ -86,6 +86,7 @@ The github repository for this project can be found [here](https://github.com/An
 ## Credits
 I would like to acknowledge and thank the following people and resources used in the creation of this site.
 ### Content
+
 -	the Durstenfeld shuffle algorithm
     - Durstenfeld, R. (July 1964). "Algorithm 235: Random permutation". Communications of the ACM. 7 (7): 420.
     - is an optimised version of the Fisher-Yates shuffle ( Fisher, Ronald A.; Yates, Frank (1948). Statistical tables for biological, agricultural and medical research (3rd ed.). London: Oliver & Boyd. pp. 26–27.)
@@ -95,7 +96,13 @@ I would like to acknowledge and thank the following people and resources used in
 
 - the Game Instructions modal was based on the tryhow modal example from [W3Schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal)
 
-- 
+- The DOM loading event listener was taken from the Code Institute Love Maths walkthrough project. The code can be found [here](https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode/tree/master/05-tidying-up/01-a-few-last-things)
+
+- [W3schools](https://www.w3schools.com/) was used repeatedly for tutorial guidance on array methods and properties.
+
+- [freecodecamp](https://www.freecodecamp.org/) was used for guidance on how to use the .filter() and .forEach() array methods, and arrow functions.
+
+- [Medium.com](https://medium.com/) was used for guidance on cool features to use in README.md
 
 ### Media
 -	The icons in the logo and all game cards are from [Font Awesome](https://fontawesome.com/)
