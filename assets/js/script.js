@@ -1,15 +1,21 @@
 //Initial array of cards - never changes
 const originalArray = ['hippo', 'otter', 'dog', 'cow', 'fish', 'kiwi', 'worm', 'shrimp', 'frog', 'cat'];
 
-// Select the start button
-const startButton = document.getElementById('startButton');
+/**
+ * Event Listener that waits for DOM to finish loading before running game
+ * from Love Math walkthrough project
+ */
+document.addEventListener("DOMContentLoaded", function() {
+  // Select the start button
+  const startButton = document.getElementById('startButton');
 
-// Event listener for the start button
-startButton.addEventListener('click', function() {
-  clearMessage();
-  startGameTimer();
-  newGame();
-});
+  // Event listener for the start button
+  startButton.addEventListener('click', function() {
+    clearMessage();
+    startGameTimer();
+    newGame();
+  });
+})
 
 /**
  * Function that loads and resets all game features for new game to start
