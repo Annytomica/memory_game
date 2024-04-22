@@ -79,15 +79,12 @@ function cardMatchCheck(hiddenCard) {
     hiddenCard.className = "matched-cards";
     document.getElementById("result").innerText = "MATCH!";
     // removes matched animal from animalCards array so no longer in active card deck
-    console.log(animalCards);
-    console.log(animal);
-    animalCards.filter(animalCard => animalCard !== animal);
+    animalCards = animalCards.filter(animalCard => animalCard !== animal);
     // checks if all four hidden cards have been matched and game is over
     allMatch();
   } else {
     document.getElementById("result").innerText = "No Match. Try Again!";
   }
-  console.log(animalCards);
 }
 
 /**
