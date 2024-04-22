@@ -28,7 +28,7 @@ const hiddenCard1 = document.getElementById('hidden1');
 const hiddenCard2 = document.getElementById('hidden2');
 const hiddenCard3 = document.getElementById('hidden3');
 const hiddenCard4 = document.getElementById('hidden4');
-const hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
+let hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
 
 /**
  * Event listener that allocates active card icon code for each new card draw
@@ -39,6 +39,7 @@ activeCard.addEventListener("click", function() {
   let animal = animalCards[Math.floor(Math.random() * animalCards.length)];
   let activeCardCode = animalCodeAllocator(animal);
   this.innerHTML = activeCardCode;
+  hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
   hiddenCardEvent();
 });
 
@@ -46,22 +47,15 @@ activeCard.addEventListener("click", function() {
  * Function to call Event listener for hidden cards
  * My Mentor Oluwafemi Medale provided guidance on how to use .forEach and => get this function to work
  */
-function hiddenCardEvent() {
-  hiddenCards.forEach((hiddenCard) => {
-    hiddenCard.addEventListener("click", function() {
-      cardMatchCheck(hiddenCard);
-      removeListener();
+const hiddenCardEvent = () => {
+  for (let i = 0; i < hiddenCards.length; i++) {
+    hiddenCards[i].addEventListener("click", function handleClick() {
+      cardMatchCheck(hiddenCards[i]);
+      // Remove the event listener after one click by emptying array
+      hiddenCards = [];
     });
-  })
-}
-
-function removeListener() {
-  hiddenCards.forEach((hiddenCard) => {
-    hiddenCard.removeEventListener("click", function() {
-      cardMatchCheck(hiddenCard);
-    });
-  })
-}
+  }
+};
 
 /**
 * function that allocates icon code to clicked hidden card
