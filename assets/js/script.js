@@ -6,6 +6,7 @@ const startButton = document.getElementById('startButton');
 
 // Event listener for the start button
 startButton.addEventListener('click', function() {
+  clearMessage();
   startGameTimer();
   newGame();
 });
@@ -16,13 +17,37 @@ startButton.addEventListener('click', function() {
 function newGame() {
 
   //calling intial functions
-  defaultCardCode();
   let animalCards = cardGenerator();
   let hiddenArray = hiddenGenerator();
 
   //allows checking of random arrays to ensure algorithim working and no duplicates
   console.log("Cards:", animalCards);
   console.log("Hidden:", hiddenArray);
+
+  /**
+   * Defining HTML Elements for global access by functions
+   */
+  const activeCard = document.getElementById("active-card");
+  const hiddenCard1 = document.getElementById('hidden1');
+  const hiddenCard2 = document.getElementById('hidden2');
+  const hiddenCard3 = document.getElementById('hidden3');
+  const hiddenCard4 = document.getElementById('hidden4');
+  let hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
+
+  /**
+   * Calling initial functions to reset the game cards
+   */
+  resetHiddenCard();
+  defaultCardCode();
+
+  /**
+   * resets class name for hidden cards to "cards hidden-cards"
+   */
+  function resetHiddenCard() {
+    for (let i = 0; i < hiddenCards.length; i++) {
+      hiddenCards[i].className = "cards hidden-cards";
+    }
+  }
 
   /**
    * Adds default question mark to all cards at start of new game
@@ -33,16 +58,6 @@ function newGame() {
       cards[i].innerHTML = '<i class="fa-solid fa-question fa-2xl"></i>';
     }
   }
-
-  /**
-  * Defining HTML Elements for global access by functions
-  */
-  const activeCard = document.getElementById("active-card");
-  const hiddenCard1 = document.getElementById('hidden1');
-  const hiddenCard2 = document.getElementById('hidden2');
-  const hiddenCard3 = document.getElementById('hidden3');
-  const hiddenCard4 = document.getElementById('hidden4');
-  let hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
 
   /**
    * Event listener that allocates active card icon code for each new card draw
@@ -56,8 +71,6 @@ function newGame() {
     hiddenCards = [hiddenCard1, hiddenCard2, hiddenCard3, hiddenCard4];
     hiddenCardEvent();
   });
-
-
 
   /**
    * Function to call Event listener for hidden cards
@@ -74,22 +87,26 @@ function newGame() {
   };
 
   /**
-  * function that allocates icon code to clicked hidden card
-  * and checks for match to active card
-  * and checks if four hidden cards have been matched and game is over
-  */
+   * function that allocates icon code to clicked hidden card
+   * and checks for match to active card
+   * and checks if four hidden cards have been matched and game is over
+   */
   function cardMatchCheck(hiddenCard) {
     let hiddenCardId = hiddenCard.id;
+
     // allocates icon code to clicked hidden card
     let animal = hiddenAnimalAllocator(hiddenCardId);
     let hiddenCardCode = animalCodeAllocator(animal);
+
     //checks if hidden card matches active card
     hiddenCard.innerHTML = hiddenCardCode;
       if (hiddenCard.innerHTML === activeCard.innerHTML) {      
       hiddenCard.className = "matched-cards";
       document.getElementById("result").innerText = "MATCH!";
+
       // removes matched animal from animalCards array so no longer in active card deck
       animalCards = animalCards.filter(animalCard => animalCard !== animal);
+
       // checks if all four hidden cards have been matched and game is over
       allMatch();
     } else {
@@ -98,9 +115,8 @@ function newGame() {
   }
 
   /**
-  *function for checking if all hidden cards have been matched and game is over
-  */
-
+   *function for checking if all hidden cards have been matched and game is over
+   */
   function allMatch() {
     
     if (hiddenCard1.className === "matched-cards"
@@ -113,12 +129,10 @@ function newGame() {
           }
   }
 
-
   /**
-   * Allocates animal from hiddenArray to each hidden card,
-   * using switch case statement
-   */
-
+  * Allocates animal from hiddenArray to each hidden card,
+  * using switch case statement
+  */
   function hiddenAnimalAllocator(hiddenCardId) {
     let hiddenAnimal;
 
@@ -140,9 +154,9 @@ function newGame() {
   }
 
   /**
-   * This function allocates the correct icon html to the 'active' card 
-   * to make animal visible, using a switch case statement.
-   */
+  * This function allocates the correct icon html to the 'active' card 
+  * to make animal visible, using a switch case statement.
+  */
   function animalCodeAllocator(animal){
     let animalCode;
     
@@ -185,7 +199,7 @@ function newGame() {
 /**
  * Clears the message from card matching attempt
  */
-function clearMessage(){
+function clearMessage() {
   document.getElementById("result").innerText = "";
 }
 
