@@ -18,69 +18,72 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="game-zone">
-        <div class="header">
-            <div class="logo"></div>
-            <h1>ANIMAL MEMORY</h1>
-            <P>Go as fast as you can to match them all!</P>
-        </div>
-        <!-- Modal area - based on W3Schools example -->
-        <div class="modal-area">
-            <!-- Button to open Instructions Modal -->
-            <button class="button" id="instructionsButton">How To Play</button>
-            <!-- Instructions modal -->
-            <div id="instructionsModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h1>Animal Memory</h1>
-                    <h2>Your Goals:</h2>
-                    <h3>1. Remember what animals are hidden under the top four cards</h3>
-                    <h3>2. Match the hidden animals to the animals drawn from the stack of game cards</h3>
-                    <h3>3. Go as fast as you can to match them all and get the best game time!</h3>
-                    <div><img class="modal-diagram" src="assets/images/instructions.webp" alt="image of game area showing key game features"></div>
-                    <h2>How to play:</h2>
-                    <ul>
-                        <li>The game doesn't start till you hit the start game button</li>
-                        <li>You need to draw your first game card from the stack before you can reveal a hidden card</li>
-                        <li>You can only reveal and match one hidden card for each game card you draw</li>
-                        <li>To reveal or draw a card you just need to click on it </li>
-                        <li>The game clock stops when you have matched all four hidden animals</li>
-                    </ul>
-                    <br>
-                    <p>HINT: the game cards are shuffled between each draw so click as fast as you dare to get the best time!</p>
+    <main>
+        <div class="game-zone">
+            <div class="header">
+                <div class="logo"></div>
+                <h1>ANIMAL MEMORY</h1>
+                <P>Go as fast as you can to match them all!</P>
+            </div>
+            <!-- Modal area - based on W3Schools example -->
+            <div class="modal-area">
+                <!-- Button to open Instructions Modal -->
+                <button class="button" id="instructionsButton">How To Play</button>
+                <!-- Instructions modal -->
+                <div id="instructionsModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h1>Animal Memory</h1>
+                        <h2>Your Goals:</h2>
+                        <h3>1. Remember what animals are hidden under the top four cards</h3>
+                        <h3>2. Match the hidden animals to the animals drawn from the stack of game cards</h3>
+                        <h3>3. Go as fast as you can to match them all and get the best game time!</h3>
+                        <div><img class="modal-diagram" src="assets/images/instructions.webp" alt="image of game area showing key game features"></div>
+                        <h2>How to play:</h2>
+                        <ul>
+                            <li>The game doesn't start till you hit the start game button</li>
+                            <li>You need to draw your first game card from the stack before you can reveal a hidden card</li>
+                            <li>You can only reveal and match one hidden card for each game card you draw</li>
+                            <li>To reveal or draw a card you just need to click on it </li>
+                            <li>The game clock stops when you have matched all four hidden animals</li>
+                        </ul>
+                        <br>
+                        <p>HINT: the game cards are shuffled between each draw so click as fast as you dare to get the best time!</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Game area -->
-        <div class="game-area">
-            <!-- Game clock from ChatGPT -->
-            <div class="game-clock">
-                <p id="clock">00:00</p>
-                <button class="button" id="startButton">Start Game</button>
-            </div>
-            <!-- area for the hidden cards that player needs to memorise -->
-            <div class="cards-area hidden-cards-area">
-                <div class="cards hidden-cards" id="hidden1"><i class="fa-solid fa-question fa-2xl"></i></div>
-                <div class="cards hidden-cards" id="hidden2"><i class="fa-solid fa-question fa-2xl"></i></div>
-                <div class="cards hidden-cards" id="hidden3"><i class="fa-solid fa-question fa-2xl"></i></div>
-                <div class="cards hidden-cards" id="hidden4"><i class="fa-solid fa-question fa-2xl"></i></div>
-            </div>
-            <!-- area for result statements -->
-            <div class="result-area">
-                <h1 id="result"></h1>
-            </div>
-            <!-- area for 'active' card that player needs to match -->
-            <div class="cards-area active-card-area">
-                <div class="cards" id="active-card"><i class="fa-solid fa-question fa-2xl"></i></div>
-                <div class="card-stack"></div>
-            </div>
+            
+            <!-- Game area -->
+            <div class="game-area">
+                <!-- Game clock from ChatGPT -->
+                <div class="game-clock">
+                    <p id="clock">00:00</p>
+                    <button class="button" id="startButton">Start Game</button>
+                </div>
+                <!-- area for the hidden cards that player needs to memorise -->
+                <div class="cards-area hidden-cards-area">
+                    <div class="cards hidden-cards" id="hidden1"><i class="fa-solid fa-question fa-2xl"></i></div>
+                    <div class="cards hidden-cards" id="hidden2"><i class="fa-solid fa-question fa-2xl"></i></div>
+                    <div class="cards hidden-cards" id="hidden3"><i class="fa-solid fa-question fa-2xl"></i></div>
+                    <div class="cards hidden-cards" id="hidden4"><i class="fa-solid fa-question fa-2xl"></i></div>
+                </div>
+                <!-- area for result statements -->
+                <div class="result-area">
+                    <h1 id="result"></h1>
+                </div>
+                <!-- area for 'active' card that player needs to match -->
+                <div class="cards-area active-card-area">
+                    <div class="cards" id="active-card"><i class="fa-solid fa-question fa-2xl"></i></div>
+                    <div class="card-stack"></div>
+                </div>
 
+            </div>
         </div>
-    </div>
+    </main>
     <div class="footer">
-
+        <!-- copyright -->
+        <p id="copyright"> © Anny Devoy 2024. All rights reserved.</p>
     </div>
     
     <!-- font awesome kit -->
