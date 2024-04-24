@@ -42,6 +42,12 @@ h2, h3 {
     align-items: center;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .logo {
     background: url(../images/goldfish_logo.webp) no-repeat center center/cover;
     width: 200px;
@@ -85,6 +91,12 @@ h2, h3 {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#instructionsButton {
+    position: absolute;
+    right: 15%;
+    top: 5%;
 }
 
 /* Game Area styles*/
@@ -138,6 +150,7 @@ h2, h3 {
     box-shadow: 0 2px 5px #45554a;
     border-radius: 5px;
 }
+
 .result-area {
     height: 100px;
     text-align: center;
@@ -145,10 +158,18 @@ h2, h3 {
 }
 
 .active-card-area {
-    width: 40vh;
-    max-width: 450px;
     display: flex;
-    flex-direction: column;
+    flex-flow:row wrap;
     align-items: center;
 }
 
+/* repeat of .cards styling but needs to avoid event listener and add image of stack of cards */
+.card-stack {
+    background: url(../images/card-stack.webp) no-repeat center center/cover;
+    /* repeated .cards styling without border and dropshadow */
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+    padding: 55px 0;
+    font-size: 70px;
+}
