@@ -34,8 +34,10 @@ h2, h3 {
     width: 80%;
     height: 90%;
     max-width: 900px;
+    min-width: 250px;
     background-color: rgba(255,255,255,0.95);
     border-radius: 10px;
+    margin-top: 10px;
 
     /* to keep game elements stacked vertically relative to each other */
     display: flex;
@@ -173,6 +175,73 @@ h2, h3 {
     height: 220px;
     margin: 10px;
     padding: 55px 0;
-    font-size: 70px;
     border-radius: 5px;
+}
+
+/* all media querys */
+
+/* for mobiles below 450px */
+@media screen and (max-width: 450px){
+    /* general styles */
+    h1, h2 {
+        padding: 5px 0;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    } 
+    
+    h2, h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+    
+    /* game area styles */
+
+    #instructionsButton {
+        position: absolute;
+        left: 10%;
+        top: 2%;
+    }
+
+    #clock {
+        font-size: 60px;
+    }
+
+    .cards {
+        width: 100px;
+        height: 100px;
+        padding: 27px 0;
+        font-size: 35px;
+    }
+
+    .matched-cards {
+        width: 100px;
+        height: 100px;
+        padding: 20px 0;
+        font-size: 35px;
+    }
+
+    .card-stack {
+        display: none;
+    }
+
+    .result-area {
+        height: 70px;
+    }
+}
+
+/* laptops and up from 992px */
+@media screen and (min-width: 992px) {
+    
+    /* game area styles */
+    #instructionsButton {
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        transform: translateX(280px);
+    }
 }
