@@ -15,7 +15,8 @@ body {
     letter-spacing: 1px;
     font-weight:  500;
     text-align: center;
-
+    /* background image for body */
+    background: url(../images/woodland-background_16-9ratio.webp) no-repeat center center/cover;
     /* to keep body elements stacked vertically relative to each other */
     display: flex;
     flex-direction: column;
@@ -28,8 +29,23 @@ h2, h3 {
 }
 
 /* Main content styles */
+
+.game-zone {
+    width: 80%;
+    height: 90%;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px;
+
+    /* to keep game elements stacked vertically relative to each other */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .logo {
-    font-size: 10vh;
+    background: url(../images/goldfish_logo.webp) no-repeat center center/cover;
+    width: 200px;
+    height: 150px;
 }
 
 /* Modal styles - from W3Schools example */
