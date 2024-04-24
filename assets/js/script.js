@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     startGameTimer();
     newGame();
   });
-})
+});
 
 /**
  * Function that loads and resets all game features for new game to start
@@ -126,13 +126,13 @@ function newGame() {
   function allMatch() {
     
     if (hiddenCard1.className === "matched-cards"
-          && hiddenCard2.className === "matched-cards"
-          && hiddenCard3.className === "matched-cards"
-          && hiddenCard4.className === "matched-cards") {
-            stopGameTimer();
-            document.getElementById("result").innerHTML = `Congratulations! All match!
-            Your time was ${clockElement.textContent}`;
-          }
+      && hiddenCard2.className === "matched-cards"
+      && hiddenCard3.className === "matched-cards"
+      && hiddenCard4.className === "matched-cards") {
+        stopGameTimer();
+        document.getElementById("result").innerHTML = `Congratulations! All match!
+        Your time was ${clockElement.textContent}`;
+      }
   }
 
   /**
@@ -158,7 +158,7 @@ function newGame() {
       default:
         alert("Oops! Something didn't load right. Please restart the game");
     }
-    return hiddenAnimal
+    return hiddenAnimal;
   }
 
   /**
@@ -202,7 +202,7 @@ function newGame() {
       default:
         alert('Unknown animal. Call a scientist!... or just try a new card');
     }
-    return animalCode
+    return animalCode;
   }
 }
 
@@ -301,16 +301,16 @@ const span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
-}
+};
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
