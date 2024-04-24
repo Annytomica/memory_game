@@ -11,7 +11,7 @@
 /* General Styles */
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #595959;
+    color: #112c3a;
     letter-spacing: 1px;
     font-weight:  500;
     text-align: center;
@@ -33,6 +33,7 @@ h2, h3 {
 .game-zone {
     width: 80%;
     height: 90%;
+    max-width: 900px;
     background-color: rgba(255,255,255,0.95);
     border-radius: 10px;
 
@@ -112,10 +113,10 @@ h2, h3 {
 }
 
 .button {
-    height: 50px;
-    width: 100px;
+    height: 30px;
+    width: 110px;
     margin: 10px;
-    background-color: #ABF8C6;
+    background-color: #F6F2D2;
     font-size: 16px;
     border: none;
     box-shadow: 0 2px 5px #45554a;
@@ -135,6 +136,7 @@ h2, h3 {
     margin: 10px;
     padding: 55px 0;
     font-size: 70px;
+    background-color: #ffffff;
     box-shadow: 0 2px 5px #45554a;
     border-radius: 5px;
 }
