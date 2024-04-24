@@ -28,6 +28,11 @@ h2, h3 {
     font-weight: 300;
 }
 
+ul {
+    list-style-position: inside;
+    text-align: left;
+}
+
 /* Main content styles */
 
 .game-zone {
@@ -79,6 +84,14 @@ h2, h3 {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    max-width: 800px;
+}
+
+.modal-diagram {
+    width: 60%;
+    max-width: 500px;
+    min-width: 200px;
+    margin: 10px;
 }
   
 /* The modal close button */
@@ -199,6 +212,13 @@ h2, h3 {
         font-size: 0.8rem;
     }
     
+    /* Modal styles */
+    .modal-diagram {
+        margin: auto;
+        transform: translateX(-10px);
+    }
+
+
     /* game area styles */
 
     #instructionsButton {
