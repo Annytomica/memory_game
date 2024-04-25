@@ -205,3 +205,5 @@ I would like to acknowledge and thank the following people and resources used in
 ### Acknowledgements
 
 My mentor, Oluwafemi Medale, for his invaluable guidance and feedback. In particular, introducing me to the use of forEach() and arrow functions and suggesting the use of a modal for game instructions.
+
+My wife Megan and my mother, who helped with the game testing process.
