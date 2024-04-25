@@ -1,8 +1,13 @@
+![logo](assets/readme/goldfish_logo.png)
 # Animal Memory Game
 
-A JavaScript memory game where you remember the location of animal cards and match them to your active card.
+A JavaScript memory game 
+
+Remember what animals are on the hidden cards and match them to your active card as quickly as you can!
 
 The live game can be found [here](https://annytomica.github.io/memory_game/)
+
+![Site Mockup](assets/readme/mock-up_amiresponsive.png)
 
 ## Features
 ### Existing features
@@ -11,14 +16,29 @@ The live game can be found [here](https://annytomica.github.io/memory_game/)
 
 ## Site Design Process
 ### Goal
-The goal was to create a simple and fun memory game website
+The goal was to create a simple and fun memory game
 - interface easy to understand and use
 - use animal icons so each card easy to identify and match
 - game functionality created using JavaScript
 - a game where you can compete against yourself or others by timing completion speed
 
+### Visual Identity
+The theme was british woodland animals and a simple yet fun background image was generated in MidJourney, from which the rest of the visuals were developed.
+
+#### Logo
+The fish logo was taken from the background image, with background removed in Adobe Photoshop
+
+#### Colour Palette
+The simple colour palette was generated in Figma, extracting three key colours from the background image generated in MidJourney. 
+
+![colour palette](assets/readme/colour-palette.png)
+
+#### Animal Icons
+Icons from Font Awesome were used for the animal cards as they were simple, crisp vector graphics and easy to distinguish from each other.
+Not all animals matched the woodland theme, but considering MidJourney drew a cow-dog in the background image, accuracy is not something to worry about.
+
 ### Site wireframe
-The game wireframe and visual design was created in Figma.
+The game wireframe and visual design was created in Figma. The wireframe with basic game format was created first, then once a background image was generated, the visual style of the game was developed and mocked up. The wireframe can be accessed [here](assets/readme/wireframe.png)
 
 ### Development process
 
@@ -27,12 +47,17 @@ The game wireframe and visual design was created in Figma.
 - CSS – for visual appeal and responsive design features
 - JavaScript - for all game functions
 - GenAI – creation of game clock
+    - Midjourney - background image and logo
     - ChatGPT 3.5 – HTML and JavaScript code for game clock
 - Figma – wireframe and visual concept development
-
+- Adobe Photoshop – Adjustment of image sizing and modification of logo
+- Pixelied.com – conversion of jpeg and png image files to webp for efficient loading
+- Favicon.io – generation of favicon from logo design.
+- UI.dev – amiresponsive was used to test each page responsivity to screen size and create site mockup images.
 
 ## Testing
 ### General Strategy
+The game was deployed very early on github pages, when just the basic HTML structure was ready. This allowed daily assessment of functionality of game elements and helped identify any issues quickly so they could be fixed before moving on to new features. Gitpod was used as the IDE and the site was run on a server live during development so code could be assessed immediately. Chrome Devtools were actively used during gitpod coding sessions so any errors thrown to the console could be seen immediately and fed back into the troubleshooting process. Devtools was also used to test responsive features for different screen sizes as they were developed. Changes to code were pushed multiple times a day. Using this strategy most bugs and functionality issues were identified and resolved quickly before they became a major issue for the game.
 ### Devices and Browsers
 #### Web Browsers
 Chrome (primary), Firefox , Edge and Brave
@@ -44,11 +69,15 @@ Chrome (primary), Firefox , Edge and Brave
 - Desktop screens: BenQ PD series 27”
 
 ### Final Validation
-HTML – all pages passed validation with no errors detected using the official [W3C HTML validator](https://validator.w3.org/). The summary of results can be found [here](assets/readme/html-validation.png)
+HTML – the game passed validation with no errors detected using the official [W3C HTML validator](https://validator.w3.org/). One warning was present - the h1 where the game messages are displayed has a default of being empty on game loading. The summary of results can be found [here](assets/readme/html-validation.png)
 
-CSS – all pages passed validation with no errors detected using the official [W3C CSS validator](https://jigsaw.w3.org/css-validator/). The summary of results can be found [here](assets/readme/css-valdation.png)
+CSS – the game passed validation with no errors detected using the official [W3C CSS validator](https://jigsaw.w3.org/css-validator/). The summary of results can be found [here](assets/readme/css-validation.png)
 
-Accessibility – all pages showed high accessibility using Chrome [Lighthouse DevTools](https://developer.chrome.com/docs/lighthouse/). The summary of results can be found [here](assets/readme/Lighthouse-validation.png)
+JavaScript - the game passed vaildation with no errors detected using [JS Hint](https://jshint.com/). The summary of results can be found [here](assets/readme/jshint_summary.png)
+
+![lighthouse](assets/readme/lighthouse_desktop_small.png)
+
+Accessibility – the desktop game had perfect scores using Chrome [Lighthouse DevTools](https://developer.chrome.com/docs/lighthouse/). The mobile version was almost perfect, with slightly reduced performace. The summary of results can be found [here](assets/readme/lighthouse-validation.png)
 
 ## Bugs
 ### Fixed
@@ -60,8 +89,6 @@ Accessibility – all pages showed high accessibility using Chrome [Lighthouse D
 NB: This throws a TypeError to the console when array is empty as it recognises hiddenAnimalAllocator function would return undefined if called. This is not an issue as that function is never called when the array is empty and game play is unaffected.
 
 ### Unfixed
-
-
 
 
 ## Deployment
