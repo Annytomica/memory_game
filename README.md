@@ -11,8 +11,53 @@ The live game can be found [here](https://annytomica.github.io/memory_game/)
 
 ## Features
 ### Existing features
+#### Background image
+The background image, depicting a british woodland scene with animals in very graphic retro illustration style, was generated in MidJourney. It is a humourously weird and engaging picture with a warm palette that draws the eye of the game visitor. The dog-cows are a personal favorite.
+
+![background image](assets/readme/woodland-background_16-9ratio.png)
+
+#### Logo
+The logo is a fish that was cropped from the bottom left of the background image. Background color was removed using photoshop. 
+
+![logo](assets/readme/goldfish_logo.png)
+
+A matching favicon was generated using [Favicon.io](https://favicon.io/favicon-converter/)
+
+#### Game instructions modal
+Importantly, there is a 'How To Play' button which brings up a game instructions modal.
+
+The modal has three sections:
+- goals - what the aim of the game is
+- diagram - visually shows what and where the important game features are
+- game-play - step by step instructions on how to play the game.
+
+![Instructions modal](assets/readme/instructions-modal.png)
+
+#### Game area
+The game area floats above the background image. The features use the colour palette drawn from the background image providing a visual flow and link.
+
+The game area has four main sections:
+1. The header - where the game starts. Besides the logo and title, the instructions modal, the game clock and the start button are the key game features in this section.
+2. The hidden animal cards - on larger screens they are displayed as a row of four cards, on tablet and mobile they stack 2x2. The default icon displayed is a ?, once an animal is matched it gets a thick orange boarder and is locked so the animal icon no longer reverts to a question mark.
+
+![game area desktop](assets/readme/game-view_large-screen.png)
+
+3. The message area - where match, no match and final game over messages are displayed dynamically as the game is played.
+4. The active game card stack - on larger screens there is an image of a stack of cards. On mobile this stack disapears to avoid cluttering the game area.
+
+![game area mobile](assets/readme/game-view_mobile.png)
+
+#### Footer
+A very simple footer with name and copyright
+
+![footer](assets/readme/footer.png)
 
 ### Features for the future
+#### Scoreboard
+Provide the ability for the player to enter thier name and have it, along with thier time, to a leaderboard. The game will have a small top10 displayed to the side of the game area on larger screens.
+
+#### Increasing difficulty
+Right now the game is very straightforward. Higher levels can be added by increasing the number of animals in the stack and the number of hidden animals.
 
 ## Site Design Process
 ### Goal
@@ -103,6 +148,7 @@ NB: This throws a TypeError to the console when array is empty as it recognises 
 
 ### Unfixed
 - occassionally an animal is not removed from the active card array after being matched. It is not clear why this occurs as the function works 99% of the time. It happens when cards are being clicked extremely quickly. No error is thrown to console if this happens.
+- on older devices (old Surface Pro) repeated game plays of 6+ times leads to the game not working properly, with slow responsivity and increased liklihood of the above bug occurring. Possible the accumulation of TypeErrors may be contributing. This needs further investigation.
 
 ## Deployment
 The site was deployed to GitHub pages using the recommended process.
@@ -116,6 +162,8 @@ In Summary:
 6.	Alternatively, from the main repository page, within the menu on the right a ‘Deployments’ will now have appeared. This section provides a link to the active site as well as summarizes the number of updates the site has received since initial deployment.
 
 The github repository for this project can be found [here](https://github.com/Annytomica/memory_game/)
+
+If you wish to develop this game further, feel free. To do this, create a fork of this repository and save it to your own github profile. To do this, use the fork button at the top right of this repository. This brings you to a new window, where you select yourself as the owner and can add extra details to name and description of the repo. If you chose to do this, please be respectful and credit me as the origin of this project and code.
 
 ![GitHub deployments](https://img.shields.io/github/deployments/Annytomica/memory_game/github-pages)
 ![GitHub language count](https://img.shields.io/github/languages/count/Annytomica/memory_game)
