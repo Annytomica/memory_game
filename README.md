@@ -37,13 +37,13 @@ The modal has three sections:
 The game area floats above the background image. The features use the colour palette drawn from the background image providing a visual flow and link.
 
 The game area has four main sections:
-1. The header - where the game starts. Besides the logo and title, the instructions modal, the game clock and the start button are the key game features in this section.
-2. The hidden animal cards - on larger screens they are displayed as a row of four cards, on tablet and mobile they stack 2x2. The default icon displayed is a ?, once an animal is matched it gets a thick orange boarder and is locked so the animal icon no longer reverts to a question mark.
+1. The header - where the game starts. Besides the logo and title, the instructions modal, game clock and the start button are the key game features in this section.
+2. The hidden animal cards - on larger screens they are displayed as a row of four cards, on tablet and mobile they stack 2x2. The default icon displayed is a ?. Once an animal is matched the card gets a thick orange boarder and is locked so the animal icon no longer reverts to a question mark.
 
 ![game area desktop](assets/readme/game-view_large-screen.png)
 
-3. The message area - where match, no match and final game over messages are displayed dynamically as the game is played.
-4. The active game card stack - on larger screens there is an image of a stack of cards. On mobile this stack disapears to avoid cluttering the game area.
+3. The message area - where match, no match and final game over congratulations messages are displayed dynamically as the game is played.
+4. The active game card stack - The active card is displayed beside an image of stacked cards on larger screens. On mobile devices the stack image disapears to avoid cluttering the game area.
 
 ![game area mobile](assets/readme/game-view_mobile.png)
 
@@ -54,7 +54,7 @@ A very simple footer with name and copyright
 
 ### Features for the future
 #### Scoreboard
-Provide the ability for the player to enter thier name and have it, along with thier time, to a leaderboard. The game will have a small top10 displayed to the side of the game area on larger screens.
+Provide the ability for the player to enter thier name, and along with thier time, submit it to a leaderboard. The game will have a small top10 displayed to the side of the game area on larger screens.
 
 #### Increasing difficulty
 Right now the game is very straightforward. Higher levels can be added by increasing the number of animals in the stack and the number of hidden animals.
@@ -82,10 +82,11 @@ The simple colour palette was generated in Figma, extracting three key colours f
 Icons from Font Awesome were used for the animal cards as they were simple, crisp vector graphics and easy to distinguish from each other.
 Not all animals matched the woodland theme, but considering MidJourney drew a cow-dog in the background image, accuracy is not something to worry about.
 
-### Site wireframe
+### Wireframe
 The game wireframe and visual design was created in Figma. The wireframe with basic game format was created first, then once a background image was generated, the visual style of the game was developed and mocked up. The wireframe can be accessed [here](assets/readme/wireframe.png)
 
 ### Development process
+The game was constructed with a logical flow. First, creating the game in empty box format to replicate the wireframe before starting to add functions and content. The javascript fucntions were then added to the game, so that the game was playable from teh wireframe format. Finally, the game visual styling, images and responsivity was added. Some of the original design concept was not working when incorporating responsive design features, such as the placement of the how to play button, and were adapted. The wireframe was updated to reflect these changes. 
 
 ## Technologies
 - HTML – for basic site structure
