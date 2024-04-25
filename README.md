@@ -57,7 +57,20 @@ The game wireframe and visual design was created in Figma. The wireframe with ba
 
 ## Testing
 ### General Strategy
-The game was deployed very early on github pages, when just the basic HTML structure was ready. This allowed daily assessment of functionality of game elements and helped identify any issues quickly so they could be fixed before moving on to new features. Gitpod was used as the IDE and the site was run on a server live during development so code could be assessed immediately. Chrome Devtools were actively used during gitpod coding sessions so any errors thrown to the console could be seen immediately and fed back into the troubleshooting process. Devtools was also used to test responsive features for different screen sizes as they were developed. Changes to code were pushed multiple times a day. Using this strategy most bugs and functionality issues were identified and resolved quickly before they became a major issue for the game.
+The game was deployed very early on github pages, when just the basic HTML structure was ready. This allowed daily assessment of functionality of game elements and helped identify any issues quickly so they could be fixed before moving on to new features. Gitpod was used as the IDE and the site was run on a server live during development so code could be assessed immediately. Chrome Devtools were actively used during gitpod coding sessions so any errors thrown to the console could be seen immediately and fed back into the troubleshooting process. Devtools was also used to test responsive features for different screen sizes as they were developed. Changes to code were pushed multiple times a day. Using this strategy most bugs and functionality issues were identified and resolved quickly before they became a major issue for the game. The hidden card and active card arrays were logged to the console for each game, so the functionality of the array producing functions could be checked.
+
+Once the game development was complete the game was loaded using various devices and browsers detailed below. The game was assessed each time with the following strategy:
+1. Test modal for instructions loads and is visible, legible and formatted correctly.
+2. Test that all cards are not active before game starts.
+3. Test that on game start the clock begins, hidden cards still are inactive and the first active game card can be drawn.
+4. Play the game to see if correct messages are popping up for correct and incorrect matches.
+5. Check that only one hidden card can be selected with every draw of active game card.
+6. Once 3 cards have been matched run through the active stack of cards drawing 20+ times to confirm that the matched animals have been removed from the stack correctly.
+7. Match the final card and assess whether final message displays correctly and game clock stops.
+8. Check that all game features reset when a new game is started.
+
+After all game features were confirmed as functional the final html, css, js and accessibility validations were carried out.
+
 ### Devices and Browsers
 #### Web Browsers
 Chrome (primary), Firefox , Edge and Brave
@@ -89,7 +102,7 @@ Accessibility – the desktop game had perfect scores using Chrome [Lighthouse D
 NB: This throws a TypeError to the console when array is empty as it recognises hiddenAnimalAllocator function would return undefined if called. This is not an issue as that function is never called when the array is empty and game play is unaffected.
 
 ### Unfixed
-
+- occassionally an animal is not removed from the active card array after being matched. It is not clear why this occurs as the function works 99% of the time. It happens when cards are being clicked extremely quickly. No error is thrown to console if this happens.
 
 ## Deployment
 The site was deployed to GitHub pages using the recommended process.
