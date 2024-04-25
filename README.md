@@ -126,6 +126,9 @@ Chrome (primary), Firefox , Edge and Brave
 - Laptops: Dell Inspirion 13”, MacBook Air 13”, MacBook Pro 17" (older model)
 - Desktop screens: BenQ PD series 27”
 
+#### Testing Summary
+![testing table](assets/readme/testing-table.png)
+
 ### Final Validation
 HTML – the game passed validation with no errors detected using the official [W3C HTML validator](https://validator.w3.org/). One warning was present - the h1 where the game messages are displayed has a default of being empty on game loading. The summary of results can be found [here](assets/readme/html-validation.png)
 
@@ -149,6 +152,7 @@ NB: This throws a TypeError to the console when array is empty as it recognises 
 ### Unfixed
 - occassionally an animal is not removed from the active card array after being matched. It is not clear why this occurs as the function works 99% of the time. It happens when cards are being clicked extremely quickly. No error is thrown to console if this happens.
 - on older devices (old Surface Pro) repeated game plays of 6+ times leads to the game not working properly, with slow responsivity and increased liklihood of the above bug occurring. Possible the accumulation of TypeErrors may be contributing. This needs further investigation.
+- on older devices the match orange border can display on a hidden card that has not been matched correctly. The hidden card stays active and game-play continues. Unknown what causes this.
 
 ## Deployment
 The site was deployed to GitHub pages using the recommended process.
