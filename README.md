@@ -150,6 +150,7 @@ Accessibility – the desktop game had perfect scores using Chrome [Lighthouse D
 - removeListener function is not working and does not inactivate hidden cards after first click. FIX: emptied hiddenCards array after click, rather than use removeEventListener which I could not get to work. Also had to change from using .forEach to iterate through hiddenCards array to normal for loop - I still don't quite understand why not using forEach made a difference, it was desperation not knowledge that made me try this.
 NB: This throws a TypeError to the console when array is empty as it recognises hiddenAnimalAllocator function would return undefined if called. This is not an issue as that function is never called when the array is empty and game play is unaffected.
 - TypeError when resetting cards and game, caused by inefficient clearing of previous states for cards. FIX: refactored functions and event listeners and created game state object to better manage game flow.
+- multiple hidden cards can be clicked and revealed per card draw in newly refactored code. FIX: added guessMade to gameState object and refactored event listners to modify guessMAde state depending on game flow.
 
 ### Unfixed
 - all known bugs have been fixed
