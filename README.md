@@ -149,11 +149,10 @@ Accessibility – the desktop game had perfect scores using Chrome [Lighthouse D
 - animalCards.filter function does not remove animal from animalCards array, in spite of function working in python tutor. FIX: required restating the array with animalCards = animalCards.filter() to commit the array change as the animalCards.filter() alone does not change array permanently
 - removeListener function is not working and does not inactivate hidden cards after first click. FIX: emptied hiddenCards array after click, rather than use removeEventListener which I could not get to work. Also had to change from using .forEach to iterate through hiddenCards array to normal for loop - I still don't quite understand why not using forEach made a difference, it was desperation not knowledge that made me try this.
 NB: This throws a TypeError to the console when array is empty as it recognises hiddenAnimalAllocator function would return undefined if called. This is not an issue as that function is never called when the array is empty and game play is unaffected.
+- TypeError when resetting cards and game, caused by inefficient clearing of previous states for cards. FIX: refactored functions and event listeners and created game state object to better manage game flow.
 
 ### Unfixed
-- occassionally an animal is not removed from the active card array after being matched. It is not clear why this occurs as the function works 99% of the time. It happens when cards are being clicked extremely quickly. No error is thrown to console if this happens.
-- on older devices (old Surface Pro) repeated game plays of 6+ times leads to the game not working properly, with slow responsivity and increased liklihood of the above bug occurring. Possible the accumulation of TypeErrors may be contributing. This needs further investigation.
-- on older devices the match orange border can display on a hidden card that has not been matched correctly. The hidden card stays active and game-play continues. Unknown what causes this.
+- all known bugs have been fixed
 
 ## Deployment
 The site was deployed to GitHub pages using the recommended process.
