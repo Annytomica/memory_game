@@ -12,7 +12,8 @@ const gameState = {
   animalCards: [],
   hiddenArray: [],
   activeAnimal: null,
-  isCardActive: false
+  isCardActive: false,
+  guessMade: false,
 };
 
 // Cache DOM elements once on page load
@@ -78,6 +79,7 @@ function handleActiveCardClick() {
   const randomIndex = Math.floor(Math.random() * gameState.animalCards.length);
   gameState.activeAnimal = gameState.animalCards[randomIndex];
   gameState.isCardActive = true;
+  gameState.guessMade = false;
 
   const icon = animalCodeAllocator(gameState.activeAnimal);
   activeCard.innerHTML = icon;
@@ -89,14 +91,24 @@ function handleActiveCardClick() {
 function handleHiddenCardClick(event) {
   const hiddenCard = event.currentTarget;
 
-  // Do nothing if there's no active card or this card is already matched
-  if (!gameState.isCardActive || hiddenCard.classList.contains("matched-cards")) return;
+  // Do nothing if no card drawn, guess made or this card is already matched
+    if (!gameState.isCardActive || gameState.guessMade || hiddenCard.classList.contains("matched-cards")) {
+    if (!gameState.isCardActive) {
+      resultDisplay.innerText = "Draw a card first!";
+    } else if (gameState.guessMade) {
+      resultDisplay.innerText = "You've already guessed. Draw a new card!";
+    }
+    return;
+  }
 
   const cardId = hiddenCard.id;
   const hiddenAnimal = hiddenAnimalAllocator(cardId);
   const hiddenIcon = animalCodeAllocator(hiddenAnimal);
 
   hiddenCard.innerHTML = hiddenIcon;
+
+  // Mark that a guess has been made
+  gameState.guessMade = true;
 
   // Check for a match
   if (hiddenAnimal === gameState.activeAnimal) {
@@ -110,6 +122,8 @@ function handleHiddenCardClick(event) {
     checkAllMatches();
   } else {
     resultDisplay.innerText = "No Match. Try Again!";
+    gameState.isCardActive = false;
+    gameState.activeAnimal = null;
   }
 }
 
